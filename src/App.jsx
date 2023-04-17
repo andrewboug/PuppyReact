@@ -1,22 +1,19 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar";
-import AllPlayers from "./components/AllPlayers";
-import NewPlayerForm from "./components/NewPlayerForm";
-import SinglePlayer from "./components/SinglePlayer";
+import AllDogs from "./components/AllDogs";
+import NewDogForm from "./components/NewDogForm";
+import SingleDog from "./components/SingleDog";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <NavBar />
-
+      <nav>
+        <Link to="/">Home</Link>
+      </nav>
       <Routes>
-        <Route path="/" element={<AllPlayers />} />
-        <Route path="/newplayerform" element={<NewPlayerForm />} />
-        <Route path="/singleplayer/:id" element={<SinglePlayer />} />
+        <Route path="/" element={<AllDogs />} />
+        <Route path="/form" element={<NewDogForm />} />
+        <Route path="/:id" element={<SingleDog />} />
       </Routes>
     </div>
   );
